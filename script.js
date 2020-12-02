@@ -1,59 +1,66 @@
-var topic = prompt("Proszê podaæ temat przeprowadzanej debaty", "<temat debaty>");
+var topic = prompt("Prosze podac temat przeprowadzanej debaty", "<temat debaty>");
 
 document.getElementById("Topic").innerHTML = topic;
 
-var number = prompt("Proszê podaæ liczbê osób bior¹cyh udzia³ w debacie (min - 1 max - 6)", "<1 - 6>");
-var FOR1 = document.getElementById("for1");
-var FOR2 = document.getElementById("for2");
-var FOR3 = document.getElementById("for3");
-var FOR4 = document.getElementById("for4");
-var FOR5 = document.getElementById("for5");
-var FOR6 = document.getElementById("for6");
+var number = Number(prompt("Prosze podac liczbe osob jednej dru¿yny bioracyh udzial w debacie (min - 1 max - 6)", "<1 - 6>"));
 
-var AGAINST1 = document.getElementById("against1");
-var AGAINST2 = document.getElementById("against2");
-var AGAINST3 = document.getElementById("against3");
-var AGAINST4 = document.getElementById("against4");
-var AGAINST5 = document.getElementById("against5");
-var AGAINST6 = document.getElementById("against6");
 
-if (number <= "1") {
-    FOR2.style.display = "none";
-    AGAINST2.style.display = "none";
+if (number < "1") {
+    number = 1;
 }
-
-if (number <= "2") {
-    FOR3.style.display = "none";
-    AGAINST3.style.display = "none";
+else if (number > "6") {
+    number = 6;
 }
-
-if (number <= "3") {
-    FOR4.style.display = "none";
-    AGAINST4.style.display = "none";
+else if (number <= "6" && number >= "1") {
+    number = number;
 }
-
-if (number <= "4") {
-    FOR5.style.display = "none";
-    AGAINST5.style.display = "none";
-}
-
-if (number <= "5") {
-    FOR6.style.display = "none";
-    AGAINST6.style.display = "none";
+else {
+    alert("Nieprawidlowy numer, prosze odswiezyc strone");
 }
 
 
 
+const groupFor = [
+    document.getElementById("for1"),
+    document.getElementById("for2"),
+    document.getElementById("for3"),
+    document.getElementById("for4"),
+    document.getElementById("for5"),
+    document.getElementById("for6")
+];
 
+const groupAgainst = [
+    document.getElementById("against1"),
+    document.getElementById("against2"),
+    document.getElementById("against3"),
+    document.getElementById("against4"),
+    document.getElementById("against5"),
+    document.getElementById("against6")
+];
 
+alert("UCZESTNICY GRUPY ZA:")
 
+for (var i = 1; i <= 6; i++) {
+    if (i < number + 1) {
+        var name = prompt("Prosze podac imie " + i + " uczestnika z grupy ZA:", "<imie>")
+        groupFor[i - 1].innerHTML = name;
+    }
+    else {
+        groupFor[i - 1].style.display = "none";
+    }
+}
 
+alert("UCZESTNICY GRUPY PRZECIW:")
 
-
-
-
-
-
+for (var i = 1; i <= 6; i++) {
+    if (i < number + 1) {
+        var name = prompt("Prosze podac imie " + i + " uczestnika z grupy PRZECIW:", "<imie>")
+        groupAgainst[i - 1].innerHTML = name;
+    }
+    else {
+        groupAgainst[i - 1].style.display = "none";
+    }
+}
 
 
 
