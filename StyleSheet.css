@@ -1,0 +1,23 @@
+#display{
+    margin: 0 auto;
+    text-align: center; font-size: 40px;
+}
+
+#Topic {
+    text-align: center;
+    font-size: 2em;
+}
+
+.box {
+    margin: 0 auto;
+    width: 600px;
+    height: 700px;
+    text-align:center;
+}
+
+.for, .against, .watch {
+    float: left;
+    width: 33%;
+}
+
+
