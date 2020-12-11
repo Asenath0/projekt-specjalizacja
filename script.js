@@ -1,23 +1,3 @@
-var topic = prompt("Prosze podac temat przeprowadzanej debaty", "<temat debaty>");
-
-document.getElementById("Topic").innerHTML = topic;
-
-var number = Number(prompt("Prosze podac liczbe osob jednej dru¿yny bioracyh udzial w debacie (min - 1 max - 6)", "<1 - 6>"));
-
-
-if (number < "1") {
-    number = 1;
-}
-else if (number > "6") {
-    number = 6;
-}
-else if (number <= "6" && number >= "1") {
-    number = number;
-}
-else {
-    alert("Nieprawidlowy numer, prosze odswiezyc strone");
-}
-
 
 
 const groupFor = [
@@ -38,32 +18,35 @@ const groupAgainst = [
     document.getElementById("against6")
 ];
 
-alert("UCZESTNICY GRUPY ZA:")
+function disableF() {
+    document.getElementById("disableF").style.display = "none";
+    for (var i in groupFor) {
+        if (groupFor[i].value == "") {
+            groupFor[i].style.display = "none";
+        }
+        else {
+            groupFor[i].disabled = "true";
+        }
+    }  
+}
 
-for (var i = 1; i <= 6; i++) {
-    if (i < number + 1) {
-        var name = prompt("Prosze podac imie " + i + " uczestnika z grupy ZA:", "<imie>")
-        groupFor[i - 1].innerHTML = name;
-    }
-    else {
-        groupFor[i - 1].style.display = "none";
+function disableA() {
+    document.getElementById("disableA").style.display = "none";
+    for (var i in groupAgainst) {
+        if (groupAgainst[i].value == "") {
+            groupAgainst[i].style.display = "none";
+        }
+        else {
+            groupAgainst[i].disabled = "true";
+        }
     }
 }
 
-alert("UCZESTNICY GRUPY PRZECIW:")
+function disableT() {
+    document.getElementById("disableT").style.display = "none";
+    document.getElementById("Topic").disabled = "true";
 
-for (var i = 1; i <= 6; i++) {
-    if (i < number + 1) {
-        var name = prompt("Prosze podac imie " + i + " uczestnika z grupy PRZECIW:", "<imie>")
-        groupAgainst[i - 1].innerHTML = name;
-    }
-    else {
-        groupAgainst[i - 1].style.display = "none";
-    }
 }
-
-
-
 var ms = 0;
 var seconds = 0;
 var minutes = 0;
@@ -131,6 +114,5 @@ function stopWatch() {
         document.getElementById("display").innerHTML = "00:00:00"
     }
 }
-
 
 

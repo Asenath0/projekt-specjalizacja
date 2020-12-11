@@ -5,7 +5,12 @@
 
 #Topic {
     text-align: center;
+    width: 100%;
     font-size: 2em;
+}
+
+#disableT{
+    margin: 0 auto;
 }
 
 .box {

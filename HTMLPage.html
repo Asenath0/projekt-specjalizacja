@@ -5,18 +5,18 @@
     <link rel="stylesheet" href="StyleSheet.css">
 </HEAD>
 <BODY>
-    <div id="Topic">Tytuł debaty</div>
+    <input id="Topic" placeholder="Tutaj wprowadź temat debaty">
+    <button id="disableT" onclick="disableT()">Zatwierdź temat debaty</button>
     <div class="box">
         <div class="for">
             <h2>Grupa ZA</h2>
-            <ul>
-                <li id="for1">1</li>
-                <li id="for2">2</li>
-                <li id="for3">3</li>
-                <li id="for4">4</li>
-                <li id="for5">5</li>
-                <li id="for6">6</li>
-            </ul>
+                <input id="for1" />
+                <input id="for2" />
+                <input id="for3" />
+                <input id="for4" />
+                <input id="for5" />
+                <input id="for6" />
+                <button id="disableF" onclick="disableF()">Zatwierdź członków grupy</button>
         </div>
         <div class="watch">
             <div id="display">00:00:00</div>
@@ -26,18 +26,18 @@
         </div>
         <div class="against">
             <h2>Grupa PRZECIW</h2>
-            <ul>
-                <li id="against1">1</li>
-                <li id="against2">2</li>
-                <li id="against3">3</li>
-                <li id="against4">4</li>
-                <li id="against5">5</li>
-                <li id="against6">6</li>
-            </ul>
+                <input id="against1" />
+                <input id="against2" />
+                <input id="against3" />
+                <input id="against4" />
+                <input id="against5" />
+                <input id="against6" />
+            <button id="disableA" onclick="disableA()">Zatwierdź członków grupy</button>
         </div>
     </div>
 
 
     <script type="text/javascript" src="script.js"></script>
+ 
 </BODY>
 </HTML>
