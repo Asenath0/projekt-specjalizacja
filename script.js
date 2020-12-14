@@ -95,13 +95,14 @@ function disableT() {
 }
 
 
+
 //zmienne przechowuj¹ce iloœæ milisekund, sekund i minut potrzebnych do obliczeñ w stoperze
 var ms = 0;
 var seconds = 0;
 var minutes = 0;
 
 //zmienna przechowuj¹ca iloœæ minut, od której zaczyna siê odliczanie
-var initialMinutes = 5;
+var initialMinutes = 35;
 seconds = initialMinutes;
 
 //zmienne pomoznicze, które u¿ywane s¹, kiedy w stoperze iloœæ np. minut jest mniejsza od 10 i nale¿y przed cyfr¹ jeszcze wypisaæ 0
@@ -215,8 +216,13 @@ function stopWatch() {
         displayMinutes = minutes;
     }
 
+    if (minutes == 0 && seconds == 30 && ms == 0) {
+        document.getElementById("bellx1").play();
+    }
+
     document.getElementById("display").innerHTML = displayMinutes + ":" + displaySeconds + ":" + displayMs;
     if (minutes < 0) {
+        document.getElementById("bellx2").play();
         window.clearInterval(interval);
         status = "stopped";
         document.getElementById("display").innerHTML = "00:00:00";
