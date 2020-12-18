@@ -1,0 +1,57 @@
+<HTML lang="pl">
+<HEAD lang="pl">
+    <meta charset="utf-8" />
+    <TITLE>Debaty</TITLE>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+    </style>
+</HEAD>
+<BODY>
+<label for="Topic"></label><input id="Topic" placeholder="Tutaj wprowadź temat debaty">
+    <button id="disableT" onclick="disableT()">Zatwierdź temat debaty</button>
+    <div class="box">
+        <div class="for">
+            <h2>Grupa ZA</h2>
+            <label for="for1"></label><input id="for1" />
+            <label for="for2"></label><input id="for2" />
+            <label for="for3"></label><input id="for3" />
+            <label for="for4"></label><input id="for4" />
+            <label for="for5"></label><input id="for5" />
+            <label for="for6"></label><input id="for6" />
+                <div id="textF">(Nie wszystkie pola muszą być wypełnione)</div>
+                <button id="disableF" onclick="disableF()">Zatwierdź członków grupy</button>
+        </div>
+        <div class="watch">
+            <div id="display">00:00:00</div>
+            <button id="stopWatchButton" onclick="stopWatchButton()">Rozpocznij debatę</button>
+            <audio id="bellx1">
+                <source src="1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="bellx2">
+                <source src="2.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="against">
+            <h2>Grupa PRZECIW</h2>
+            <label for="against1"></label><input id="against1" />
+            <label for="against2"></label><input id="against2" />
+            <label for="against3"></label><input id="against3" />
+            <label for="against4"></label><input id="against4" />
+            <label for="against5"></label><input id="against5" />
+            <label for="against6"></label><input id="against6" />
+                <div id="textA">(Nie wszystkie pola muszą być wypełnione)</div>
+                <button id="disableA" onclick="disableA()">Zatwierdź członków grupy</button>
+        </div>
+    
+    </div>
+    <div class="discord">
+        <a href="https://discord.com/channels/787785176675385414/787796362048569346"><img src="discord-brands.svg" alt=""></a>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+ 
+</BODY>
+</HTML>

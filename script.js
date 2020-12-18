@@ -102,8 +102,8 @@ var seconds = 0;
 var minutes = 0;
 
 //zmienna przechowuj¹ca iloœæ minut, od której zaczyna siê odliczanie
-var initialMinutes = 35;
-seconds = initialMinutes;
+var initialMinutes = 5;
+minutes = initialMinutes;
 
 //zmienne pomoznicze, które u¿ywane s¹, kiedy w stoperze iloœæ np. minut jest mniejsza od 10 i nale¿y przed cyfr¹ jeszcze wypisaæ 0
 var displayMs = 0;
@@ -161,7 +161,9 @@ function stopWatchButton() {
                 interval = window.setInterval(stopWatch, 10);
                 status = "running";
                 document.getElementById("stopWatchButton").innerHTML = "Pytanie";
-                order[iOrder].style.height = "40px";
+                order[iOrder].style.height = "12%";
+				order[iOrder].style.margin = "10px";
+				order[iOrder].style.marginLeft = "0px";
                 iOrder += 1;
                 break;
 
@@ -227,13 +229,16 @@ function stopWatch() {
         status = "stopped";
         document.getElementById("display").innerHTML = "00:00:00";
         document.getElementById("stopWatchButton").innerHTML = "Nastepna osoba";
-        order[iOrder - 1].style.height = "auto";
-        order[iOrder].style.height = "40px";
+        order[iOrder - 1].style.height = "8%";
+		order[iOrder - 1].style.margin = "0px";
+        order[iOrder].style.height = "12%";
+		order[iOrder].style.margin = "10px";
+		order[iOrder].style.marginLeft = "0px";
         iOrder += 1;
         ms = 0;
         seconds = 0;
         minutes = 0;
-        seconds = initialMinutes;
+        minutes = initialMinutes;
         
     }
 }
